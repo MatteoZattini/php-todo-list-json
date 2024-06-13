@@ -1,3 +1,17 @@
 .littlebox {
     width: 18rem;
 }
+
+.done {
+    background-color: lightgreen;
+}
+
+.notdone {
+    background-color: lightcoral;
+}
+
+
+.fa-solid {
+    color: crimson !important;
+    text-decoration: none !important;
+}
