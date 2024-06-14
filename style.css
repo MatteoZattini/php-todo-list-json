@@ -13,5 +13,10 @@
 
 .fa-solid {
     color: crimson;
+    
+}
+
+span{
     z-index: 999;
 }
+

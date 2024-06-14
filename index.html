@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
+
 <body>
     <div id="app">
         <div class="container mt-3">
@@ -25,7 +30,8 @@
                 <div class="col-12 d-flex justify-content-center">
                     <div class="littlebox input-group">
                         <input v-model="myInput" type="text" class="form-control" placeholder="Aggiungi ToDo">
-                        <button id="button-Add" @click="addTask()" class="btn btn-outline-secondary" type="button">Aggiungi</button>
+                        <button id="button-Add" @click="addTask()" class="btn btn-outline-secondary"
+                            type="button">Aggiungi</button>
                     </div>
                 </div>
             </div>
@@ -36,15 +42,26 @@
                     <div class="card littlebox">
                         <ul class="list-group list-group-flush">
                             <template v-for="thing, i in toDoList">
-                                <li @click="change(i)" :class="[thing.done ? 'done' : 'notdone']" class="list-group-item d-flex justify-content-between align-items-center" >{{ thing.titolo }}</li>
-                                <i @click="remove(i)" class="fa-solid fa-trash-can"></i>
+                                <li :class="[thing.done ? 'done' : 'notdone']"
+                                    class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="w-100" @click="change(i)">{{thing.titolo }}</span>
+                                    <span><i @click="remove(i)" class="fa-solid fa-trash-can"></i></span></li>
                             </template>
+
+                            <!-- <li v-for="thing, i in toDoList" @click="change(i)"
+                                :class="[thing.done ? 'done' : 'notdone']"
+                                class="list-group-item d-flex justify-content-between align-items-center">{{thing.titolo}}
+                                <span><i @click="remove(i)" class="fa-solid fa-trash-can"></i></span>
+                            </li> -->
+
                         </ul>
-                      </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>
-        
+
 
     </div>
 
@@ -53,4 +70,5 @@
 
     <script src="./main.js"></script>
 </body>
+
 </html>

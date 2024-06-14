@@ -10,7 +10,7 @@ $filecontent = file_get_contents("dati.json");
 
         $indice = $_POST['indice'];
 
-        $toDoList[$indice]['done'] = !$toDoList[$indice]['done'];
+        $toDoList[$indice]['done'] =! $toDoList[$indice]['done'];
 
         // $toDoList['done'] = true;
         //converto tutto l'array in un json

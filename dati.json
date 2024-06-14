@@ -1,11 +1,11 @@
 [
     {
         "titolo": "fare il bucato",
-        "done": false
+        "done": true
     },
     {
         "titolo": "fare la cena",
-        "done": false
+        "done": true
     },
     {
         "titolo": "fare i compiti",
@@ -17,10 +17,14 @@
     },
     {
         "titolo": "compra latte",
-        "done": true
+        "done": false
     },
     {
         "titolo": "compra insalata",
-        "done": true
+        "done": false
+    },
+    {
+        "titolo": "c",
+        "done": false
     }
 ]

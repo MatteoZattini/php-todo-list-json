@@ -19,8 +19,8 @@ if (isset($_POST["indice"])) {
 
     //elimino la task nel mio array con unset
     unset($toDoList[$indice]);
-    $reindex = array_values($toDoList);
-    $toDoList = $reindex;
+    // $reindex = array_values($toDoList);
+    // $toDoList = $reindex;
 
     //converto tutto l'array in un json
     $fileContent = json_encode($toDoList, JSON_PRETTY_PRINT);
