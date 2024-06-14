@@ -13,4 +13,5 @@
 
 .fa-solid {
     color: crimson;
+    z-index: 999;
 }

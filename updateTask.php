@@ -7,6 +7,7 @@ $filecontent = file_get_contents("dati.json");
 
     if (isset($_POST["indice"])){
 
+
         $indice = $_POST['indice'];
 
         $toDoList[$indice]['done'] = !$toDoList[$indice]['done'];

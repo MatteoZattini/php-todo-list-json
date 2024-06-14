@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             toDoList: [],
+            deletedTasks: [],
             myInput: "",
             postRequestConfig: {
                 headers: {
