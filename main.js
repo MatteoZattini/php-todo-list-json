@@ -5,14 +5,29 @@ createApp({
         return {
             toDoList: [],
             myInput: "",
+            postRequestConfig: {
+                headers: {
+                  'Content-Type': 'multipart/form-data'
+                }
+              }
         }
     },
     methods: {
-        addElement() {
-            console.log(this.myInput)
-            this.toDoList.push({"titolo":this.myInput, "done": false})
-            this.myInput = ""
-            console.log(this.toDoList)
+        addTask() {
+            console.log("aggiungi task", this.myInput)
+
+            const newTask = {
+                titolo: this.myInput,
+                done: false
+            };
+
+            console.log(newTask)
+
+            axios.post("./create.php", newTask, this.postRequestConfig).then(results => {
+                console.log("risultati post", results.data);
+                this.toDoList = results.data;
+            })
+            
         },
 
         remove(indice) {
@@ -30,7 +45,7 @@ createApp({
     mounted() {
         console.log("Recupero i dati dal server");
 
-        axios.get("./server.php").then(results => {
+        axios.get("./list.php").then(results => {
             console.log("Risultati: ", results);
             this.toDoList = results.data;
         });
