@@ -18,7 +18,7 @@ if (isset($_POST["titolo"]) && isset($_POST["done"])) {
     $toDoList[] = $newTask;
 
     //converto tutto l'array in un json
-    $fileContent = json_encode($toDoList);
+    $fileContent = json_encode($toDoList, JSON_PRETTY_PRINT);
 
     //scrivo il json su disco
     file_put_contents("dati.json", $fileContent);

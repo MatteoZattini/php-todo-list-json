@@ -7,9 +7,9 @@ createApp({
             myInput: "",
             postRequestConfig: {
                 headers: {
-                  'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'multipart/form-data'
                 }
-              }
+            }
         }
     },
     methods: {
@@ -27,7 +27,7 @@ createApp({
                 console.log("risultati post", results.data);
                 this.toDoList = results.data;
             })
-            
+
         },
 
         remove(i) {
@@ -45,7 +45,7 @@ createApp({
             })
         },
 
-        change(element) {
+        change(i) {
             // if(element.done == true) {
             //     element.done = false
             // } else {
@@ -53,8 +53,10 @@ createApp({
             // }
 
             const taskStatus = {
-                done: true
+                indice: i,
             }
+
+            console.log(taskStatus)
 
             axios.post("./updateTask.php", taskStatus, this.postRequestConfig).then(results => {
                 console.log("risultati post", results.data);

@@ -14,7 +14,7 @@ $filecontent = file_get_contents("dati.json");
         unset($toDoList[$_POST["indice"]]);
     
         //converto tutto l'array in un json
-        $fileContent = json_encode($toDoList);
+        $fileContent = json_encode($toDoList, JSON_PRETTY_PRINT);
     
         //scrivo il json su disco
         file_put_contents("dati.json", $fileContent);
