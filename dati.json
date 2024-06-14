@@ -1,1 +1,1 @@
-[{"titolo":"fare la spesa","done":false},{"titolo":"fare la benzina","done":false},{"titolo":"andare in palestra","done":false},{"titolo":"fare il pranzo","done":false},{"titolo":"fare il bucato","done":true}]
+{"0":{"titolo":"fare la spesa","done":false},"1":{"titolo":"fare la benzina","done":false},"2":{"titolo":"andare in palestra","done":false},"3":{"titolo":"fare il pranzo","done":false},"4":{"titolo":"fare il bucato","done":true},"5":{"titolo":"ciao","done":false}}

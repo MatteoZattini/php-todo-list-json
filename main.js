@@ -30,16 +30,36 @@ createApp({
             
         },
 
-        remove(indice) {
-            this.toDoList.splice(indice, 1)
+        remove(i) {
+            // this.toDoList.splice(indice, 1)
+
+            const taskindice = {
+                indice: i,
+            }
+
+            console.log(taskindice)
+
+            axios.post("./delete.php", taskindice, this.postRequestConfig).then(results => {
+                console.log("risultati post", results.data);
+                this.toDoList = results.data;
+            })
         },
 
         change(element) {
-            if(element.done == true) {
-                element.done = false
-            } else {
-                element.done = true
+            // if(element.done == true) {
+            //     element.done = false
+            // } else {
+            //     element.done = true
+            // }
+
+            const taskStatus = {
+                done: true
             }
+
+            axios.post("./updateTask.php", taskStatus, this.postRequestConfig).then(results => {
+                console.log("risultati post", results.data);
+                this.toDoList = results.data;
+            })
         }
     },
     mounted() {

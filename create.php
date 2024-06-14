@@ -11,7 +11,7 @@ if (isset($_POST["titolo"]) && isset($_POST["done"])) {
     //creo una nuova Task
     $newTask = [
         "titolo" => $_POST["titolo"],
-        "done" => $_POST["done"]
+        "done" => false
     ];
 
     //pusho la task appena creata nel mio array
